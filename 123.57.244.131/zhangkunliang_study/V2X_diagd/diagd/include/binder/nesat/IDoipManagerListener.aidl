@@ -1,0 +1,5 @@
+package nesat;
+
+
+interface IDoipManagerListener {
+}

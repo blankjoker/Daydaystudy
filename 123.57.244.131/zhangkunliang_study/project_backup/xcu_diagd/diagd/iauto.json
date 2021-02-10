@@ -1,0 +1,13 @@
+{
+    "name": "diagd",
+    "path": "system/diagd",
+
+    "dependencies": {
+      "ncore":"0",
+      "ipc":"0"
+    },
+
+    "devdependencies": {
+      "googletest":"0"
+    }
+  }

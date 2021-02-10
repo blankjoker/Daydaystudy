@@ -1,0 +1,64 @@
+
+
+
+
+车辆发现正确的回应事件:
+{
+    DoIP_vehicle_identity_response
+}
+
+协议头解析失败事件:
+DoIP_header_resolution_failure_code_00
+DoIP_header_resolution_failure_code_01
+DoIP_header_resolution_failure_code_04
+
+
+DoIP power mode 请求回应事件:
+DoIP_vehicle_power_mode_response
+
+DoIP entity status 请求回应事件:
+DoIP_vehicle_entity_status_response
+
+DoIP 路由激活请求回应事件:
+DoIP_vehicle_routing_activation_response
+DoIP_vehicle_routing_activation_NACK_code_00
+DoIP_vehicle_routing_activation_NACK_code_01
+DoIP_vehicle_routing_activation_NACK_code_02
+DoIP_vehicle_routing_activation_NACK_code_03
+DoIP_vehicle_routing_activation_NACK_code_06
+
+
+DoIP 诊断positive回应事件:
+DoIP_vehicle_diagnostic_positive_response
+DoIP_vehicle_diagnostic_negative_code_02
+DoIP_vehicle_diagnostic_negative_code_03
+
+DoIP_vehicle_diagnostic_negative_code_06
+
+DoIP_vehicle_diagnostic_message_response
+
+
+DoIP alive check回应事件:
+DoIP_vehicle_alive_check_response
+
+
+
+doip stack debug testcase事件
+DoIP_debug_vehicle_announce
+
+DoIP_debug_doip_entity_status
+
+DoIP_debug_doip_power_mode
+
+DoIP_debug_doip_actibation_line_false
+
+DoIP_debug_doip_routing_activation_auth
+
+DoIP_debug_doip_routing_activation_not_auth
+
+DoIP_debug_doip_routing_activation_auth_failed
+
+DoIP_debug_doip_entity_status_mcts_1
+DoIP_debug_doip_entity_status_mcts_255
+
+

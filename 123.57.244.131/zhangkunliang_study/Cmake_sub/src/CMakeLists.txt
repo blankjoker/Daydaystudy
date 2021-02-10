@@ -1,0 +1,7 @@
+
+cmake_minimum_required (VERSION 2.8)
+
+AUX_SOURCE_DIRECTORY(. DIR_SRCS)
+add_library(mymain SHARED  ${DIR_SRCS})
+SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+

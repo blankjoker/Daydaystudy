@@ -1,0 +1,4 @@
+service diagd /system/bin/diagd
+    class core
+    user root
+    group root

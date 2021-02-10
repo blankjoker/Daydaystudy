@@ -1,0 +1,323 @@
+@nutshell:/ # setenforce 1
+@nutshell:/ # 
+@nutshell:/ # 
+@nutshell:/ # dmesg
+[    0.000000]  [0:        swapper:    0] Booting Linux on physical CPU 0x0
+[    0.000000]  [0:        swapper:    0] Linux version 4.14.98 (zhang@zhangkunliang) (gcc version 7.3.0 (GCC)) #1 SMP PREEMPT Thu Oct 17 19:44:19 CST 2019
+[    0.000000]  [0:        swapper:    0] Boot CPU: AArch64 Processor [410fd042]
+[    0.000000]  [0:        swapper:    0] Machine model: Freescale i.MX8QXP MEK
+[    0.000000]  [0:        swapper:    0] OF: reserved mem: OVERLAP DETECTED!
+[    0.000000]  [0:        swapper:    0] crashdump@0x94400000 (0x0000000094400000--0x0000000094700000) overlaps with encoder_reserved@0x94400000 (0x0000000094400000--0x0000000094c00000)
+[    0.000000]  [0:        swapper:    0] OF: reserved mem: failed to allocate memory for node 'linux,cma'
+[    0.000000]  [0:        swapper:    0] Reserved memory: created DMA memory pool at 0x0000000090400000, size 28 MiB
+[    0.000000]  [0:        swapper:    0] OF: reserved mem: initialized node rpmsg_dma@0x90400000, compatible id shared-dma-pool
+[    0.000000]  [0:        swapper:    0] cma: Failed to reserve 320 MiB
+[    0.000000]  [0:        swapper:    0] NUMA: No NUMA configuration found
+[    0.000000]  [0:        swapper:    0] NUMA: Faking a node at [mem 0x0000000000000000-0x000000009fffffff]
+[    0.000000]  [0:        swapper:    0] NUMA: NODE_DATA [mem 0x9ff96300-0x9ff980ff]
+[    0.000000]  [0:        swapper:    0] Zone ranges:
+[    0.000000]  [0:        swapper:    0]   DMA      [mem 0x0000000080200000-0x000000009fffffff]
+[    0.000000]  [0:        swapper:    0]   Normal   empty
+[    0.000000]  [0:        swapper:    0] Movable zone start for each node
+[    0.000000]  [0:        swapper:    0] Early memory node ranges
+[    0.000000]  [0:        swapper:    0]   node   0: [mem 0x0000000080200000-0x0000000083ffffff]
+[    0.000000]  [0:        swapper:    0]   node   0: [mem 0x0000000086200000-0x000000008fffffff]
+[    0.000000]  [0:        swapper:    0]   node   0: [mem 0x0000000094c00000-0x000000009fffffff]
+[    0.000000]  [0:        swapper:    0] Initmem setup node 0 [mem 0x0000000080200000-0x000000009fffffff]
+[    0.000000]  [0:        swapper:    0] On node 0 totalpages: 102400
+[    0.000000]  [0:        swapper:    0]   DMA zone: 1600 pages used for memmap
+[    0.000000]  [0:        swapper:    0]   DMA zone: 0 pages reserved
+[    0.000000]  [0:        swapper:    0]   DMA zone: 102400 pages, LIFO batch:31
+[    0.000000]  [0:        swapper:    0] psci: probing for conduit method from DT.
+[    0.000000]  [0:        swapper:    0] psci: PSCIv1.1 detected in firmware.
+[    0.000000]  [0:        swapper:    0] psci: Using standard PSCI v0.2 function IDs
+[    0.000000]  [0:        swapper:    0] psci: Trusted OS migration not required
+[    0.000000]  [0:        swapper:    0] psci: SMC Calling Convention v1.1
+[    0.000000]  [0:        swapper:    0] percpu: Embedded 21 pages/cpu @ffff80001ff3d000 s45976 r8192 d31848 u86016
+[    0.000000]  [0:        swapper:    0] pcpu-alloc: s45976 r8192 d31848 u86016 alloc=21*4096
+[    0.000000]  [0:        swapper:    0] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+[    0.000000]  [0:        swapper:    0] Detected VIPT I-cache on CPU0
+[    0.000000]  [0:        swapper:    0] Speculative Store Bypass Disable mitigation not required
+[    0.000000]  [0:        swapper:    0] Built 1 zonelists, mobility grouping on.  Total pages: 100800
+[    0.000000]  [0:        swapper:    0] Policy zone: DMA
+[    0.000000]  [0:        swapper:    0] Kernel command line: console=ttyLP0,115200,115200 androidboot.console=ttyLP0 bootmode=0 submode= recoveryknl=0 recoveryram=0 kernel=0 ramdisk=0 systemside=0 cons0
+[    0.000000]  [0:        swapper:    0] PID hash table entries: 2048 (order: 2, 16384 bytes)
+[    0.000000]  [0:        swapper:    0] Memory: 345724K/409600K available (8126K kernel code, 756K rwdata, 2824K rodata, 448K init, 380K bss, 63876K reserved, 0K cma-reserved)
+[    0.000000]  [0:        swapper:    0] Virtual kernel memory layout:
+[    0.000000]  [0:        swapper:    0]     modules : 0xffff000000000000 - 0xffff000008000000   (   128 MB)
+[    0.000000]  [0:        swapper:    0]     vmalloc : 0xffff000008000000 - 0xffff7dffbfff0000   (129022 GB)
+[    0.000000]  [0:        swapper:    0]       .text : 0xffff000008080000 - 0xffff000008870000   (  8128 KB)
+[    0.000000]  [0:        swapper:    0]     .rodata : 0xffff000008870000 - 0xffff000008b40000   (  2880 KB)
+[    0.000000]  [0:        swapper:    0]       .init : 0xffff000008b40000 - 0xffff000008bb0000   (   448 KB)
+[    0.000000]  [0:        swapper:    0]       .data : 0xffff000008bb0000 - 0xffff000008c6d008   (   757 KB)
+[    0.000000]  [0:        swapper:    0]        .bss : 0xffff000008c6d008 - 0xffff000008ccc1c8   (   381 KB)
+[    0.000000]  [0:        swapper:    0]     fixed   : 0xffff7dfffe7fb000 - 0xffff7dfffec00000   (  4116 KB)
+[    0.000000]  [0:        swapper:    0]     PCI I/O : 0xffff7dfffee00000 - 0xffff7dffffe00000   (    16 MB)
+[    0.000000]  [0:        swapper:    0]     vmemmap : 0xffff7e0000000000 - 0xffff800000000000   (  2048 GB maximum)
+[    0.000000]  [0:        swapper:    0]               0xffff7e0000008000 - 0xffff7e0000800000   (     7 MB actual)
+[    0.000000]  [0:        swapper:    0]     memory  : 0xffff800000200000 - 0xffff800020000000   (   510 MB)
+[    0.000000]  [0:        swapper:    0] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000]  [0:      swapper/0:    0] Preemptible hierarchical RCU implementation.
+[    0.000000]  [0:      swapper/0:    0]       RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+[    0.000000]  [0:      swapper/0:    0]       Tasks RCU enabled.
+[    0.000000]  [0:      swapper/0:    0] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000]  [0:      swapper/0:    0] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000]  [0:      swapper/0:    0] GICv3: GIC: Using split EOI/Deactivate mode
+[    0.000000]  [0:      swapper/0:    0] GICv3: no VLPI support, no direct LPI support
+[    0.000000]  [0:      swapper/0:    0] GICv3: CPU0: found redistributor 0 region 0:0x0000000051b00000
+[    0.000000]  [0:      swapper/0:    0] arch_timer: cp15 timer(s) running at 8.00MHz (phys).
+[    0.000000]  [0:      swapper/0:    0] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x1d854df40, max_idle_ns: 440795202120 ns
+[    0.000005]  [0:      swapper/0:    0] sched_clock: 56 bits at 8MHz, resolution 125ns, wraps every 2199023255500ns
+[    0.001980]  [0:      swapper/0:    0] Console: colour dummy device 80x25
+[    0.002033]  [0:      swapper/0:    0] Calibrating delay loop (skipped), value calculated using timer frequency.. 16.00 BogoMIPS (lpj=32000)
+[    0.002047]  [0:      swapper/0:    0] pid_max: default: 32768 minimum: 301
+[    0.002130]  [0:      swapper/0:    0] Security Framework initialized
+[    0.002142]  [0:      swapper/0:    0] SELinux:  Initializing.
+[    0.002192]  [0:      swapper/0:    0] SELinux:  Starting in permissive mode
+[    0.002398]  [0:      swapper/0:    0] Dentry cache hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.002505]  [0:      swapper/0:    0] Inode-cache hash table entries: 32768 (order: 6, 262144 bytes)
+[    0.002528]  [0:      swapper/0:    0] Mount-cache hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.002542]  [0:      swapper/0:    0] Mountpoint-cache hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.015921]  [0:      swapper/0:    1] ASID allocator initialised with 32768 entries
+[    0.023913]  [0:      swapper/0:    1] Hierarchical SRCU implementation.
+[    0.032602]  [0:      swapper/0:    1] *****Initialized MU
+[    0.032645]  [0:      swapper/0:    1] ***** imx8_init_pm_domains *****
+[    0.033848]  [0:      swapper/0:    1] CPU identified as i.MX8QXP, silicon rev 1.1
+[    0.039973]  [0:      swapper/0:    1] smp: Bringing up secondary CPUs ...
+[    0.068465]  [1:      swapper/1:    0] Detected VIPT I-cache on CPU1
+[    0.068495]  [1:      swapper/1:    0] GICv3: CPU1: found redistributor 1 region 0:0x0000000051b20000
+[    0.068527]  [1:      swapper/1:    0] CPU1: Booted secondary processor [410fd042]
+[    0.096496]  [2:      swapper/2:    0] Detected VIPT I-cache on CPU2
+[    0.096515]  [2:      swapper/2:    0] GICv3: CPU2: found redistributor 2 region 0:0x0000000051b40000
+[    0.096533]  [2:      swapper/2:    0] CPU2: Booted secondary processor [410fd042]
+[    0.124555]  [3:      swapper/3:    0] Detected VIPT I-cache on CPU3
+[    0.124573]  [3:      swapper/3:    0] GICv3: CPU3: found redistributor 3 region 0:0x0000000051b60000
+[    0.124590]  [3:      swapper/3:    0] CPU3: Booted secondary processor [410fd042]
+[    0.124650]  [0:      swapper/0:    1] smp: Brought up 1 node, 4 CPUs
+[    0.124698]  [0:      swapper/0:    1] SMP: Total of 4 processors activated.
+[    0.124707]  [0:      swapper/0:    1] CPU features: detected feature: GIC system register CPU interface
+[    0.124716]  [0:      swapper/0:    1] CPU features: detected feature: 32-bit EL0 Support
+[    0.124725]  [0:      swapper/0:    1] CPU features: detected feature: Kernel page table isolation (KPTI)
+[    0.127944]  [0:      swapper/0:    1] CPU: All CPU(s) started at EL2
+[    0.127964]  [0:    migration/0:   11] alternatives: patching kernel code
+[    0.128622]  [0:      swapper/0:    1] devtmpfs: initialized
+[    0.139584]  [0:      swapper/0:    1] random: get_random_u32 called from bucket_table_alloc+0x108/0x260 with crng_init=0
+[    0.140337]  [1:      swapper/0:    1] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.140388]  [1:      swapper/0:    1] futex hash table entries: 1024 (order: 5, 131072 bytes)
+[    0.140665]  [1:      swapper/0:    1] pinctrl core: initialized pinctrl subsystem
+[    0.141471]  [1:      swapper/0:    1] NET: Registered protocol family 16
+[    0.142583]  [2:      swapper/0:    1] cpuidle: using governor menu
+[    0.143890]  [2:      swapper/0:    1] vdso: 2 pages (1 code @ ffff000008876000, 1 data @ ffff000008bb4000)
+[    0.143911]  [2:      swapper/0:    1] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.144157]  [2:      swapper/0:    1] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.144504]  [2:      swapper/0:    1] imx rpmsg driver is registered.
+[    0.146363]  [2:      swapper/0:    1] MU and Power domains initialized
+[    0.146380]  [2:      swapper/0:    1] ***** imx8qxp_clocks_init *****
+[    0.196613]  [2:      swapper/0:    1] imx8qxp-pinctrl iomuxc: initialized IMX pinctrl driver
+[    0.225603]  [3:      swapper/0:    1] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.250306]  [0:      swapper/0:    1] SCSI subsystem initialized
+[    0.250990]  [0:      swapper/0:    1] usb_phy_generic usbphynop1: usbphynop1 supply vcc not found, using dummy regulator
+[    0.253743]  [0:      swapper/0:    1] i2c i2c-16: LPI2C adapter registered
+[    0.254698]  [0:      swapper/0:    1] i2c i2c-17: LPI2C adapter registered
+[    0.254969]  [0:      swapper/0:    1] imx8qxp-pinctrl iomuxc: pin SC_P_USB_SS3_TC3 already requested by iomuxc; cannot claim for 5a810000.i2c
+[    0.254981]  [0:      swapper/0:    1] imx8qxp-pinctrl iomuxc: pin-7 (5a810000.i2c) status -22
+[    0.254993]  [0:      swapper/0:    1] imx8qxp-pinctrl iomuxc: could not request pin 7 (SC_P_USB_SS3_TC3) from group lpi1cgrp  on device iomuxc
+[    0.255004]  [0:      swapper/0:    1] imx-lpi2c 5a810000.i2c: Error applying setting, reverse things back
+[    0.255066]  [0:      swapper/0:    1] imx-lpi2c: probe of 5a810000.i2c failed with error -22
+[    0.255254]  [0:      swapper/0:    1] media: Linux media interface: v0.10
+[    0.255302]  [0:      swapper/0:    1] Linux video capture interface: v2.00
+[    0.255421]  [0:      swapper/0:    1] EDAC MC: Ver: 3.0.0
+[    0.256281]  [0:      swapper/0:    1] clocksource: mxc_timer1: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 637086815595 ns
+[    0.256687]  [0:      swapper/0:    1] Advanced Linux Sound Architecture Driver Initialized.
+[    0.257837]  [1:      swapper/0:    1] clocksource: Switched to clocksource arch_sys_counter
+[    0.260106]  [1:      swapper/0:    1] NET: Registered protocol family 2
+[    0.260634]  [1:      swapper/0:    1] TCP established hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.260697]  [1:      swapper/0:    1] TCP bind hash table entries: 4096 (order: 4, 65536 bytes)
+[    0.260762]  [1:      swapper/0:    1] TCP: Hash tables configured (established 4096 bind 4096)
+[    0.260913]  [1:      swapper/0:    1] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.260939]  [1:      swapper/0:    1] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.261065]  [1:      swapper/0:    1] NET: Registered protocol family 1
+[    0.261271]  [1:      swapper/0:    1] Unpacking initramfs...
+[    0.326198]  [1:      swapper/0:    1] Freeing initrd memory: 1228K
+[    0.327271]  [1:      swapper/0:    1] hw perfevents: enabled with armv8_pmuv3 PMU driver, 7 counters available
+[    0.328402]  [1:      swapper/0:    1] audit: initializing netlink subsys (disabled)
+[    0.328538]  [3:        kauditd:  564] audit: type=2000 audit(0.324:1): state=initialized audit_enabled=0 res=1
+[    0.328906]  [1:      swapper/0:    1] workingset: timestamp_bits=44 max_order=17 bucket_order=0
+[    0.335959]  [2:      swapper/0:    1] SELinux:  Registering netfilter hooks
+[    0.338827]  [2:      swapper/0:    1] NET: Registered protocol family 38
+[    0.338936]  [2:      swapper/0:    1] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 247)
+[    0.338948]  [2:      swapper/0:    1] io scheduler noop registered
+[    0.339085]  [2:      swapper/0:    1] io scheduler cfq registered (default)
+[    0.339096]  [2:      swapper/0:    1] io scheduler mq-deadline registered
+[    0.339104]  [2:      swapper/0:    1] io scheduler kyber registered
+[    0.339227]  [2:      swapper/0:    1] LinuxCrashDump[Debug]: Init the linux crash dump driver
+[    0.339642]  [2:      swapper/0:    1] LinuxCrashDump[Debug]: Probe the linux crash dump driver
+[    0.339711]  [2:      swapper/0:    1] LinuxCrashDump[Debug]: get reserved memory, paddr: 0x94400000, vaddr: 0xFFFF00000C000000, size: 0x300000
+[    0.339942]  [2:      swapper/0:    1] LinuxCrashDumpDebugModule: linux crash dump physical address=0x94400000,size=0x300000,virtual address=0xffff00000c000000
+[    0.342971]  [2:      swapper/0:    1] mxs-dma 5b810000.dma-apbh: initialized
+[    0.347283]  [0:      swapper/0:    1] 5a060000.serial: ttyLP0 at MMIO 0x5a060010 (irq = 40, base_baud = 5000000) is a FSL_LPUART
+[    0.350064]  [0:      swapper/0:    1] console [ttyLP0] enabled
+[    0.350449]  [0:      swapper/0:    1] fsl-lpuart 5a060000.serial: NO DMA tx channel, run at cpu mode
+[    0.350462]  [0:      swapper/0:    1] fsl-lpuart 5a060000.serial: NO DMA rx channel, run at cpu mode
+[    0.351272]  [0:      swapper/0:    1] 5a070000.serial: ttyLP1 at MMIO 0x5a070010 (irq = 41, base_baud = 5000000) is a FSL_LPUART
+[    0.352567]  [0:      swapper/0:    1] 5a080000.serial: ttyLP2 at MMIO 0x5a080010 (irq = 42, base_baud = 5000000) is a FSL_LPUART
+[    0.354047]  [0:      swapper/0:    1] 5a090000.serial: ttyLP3 at MMIO 0x5a090010 (irq = 43, base_baud = 5000000) is a FSL_LPUART
+[    0.366740]  [0:      swapper/0:    1] loop: module loaded
+[    0.367564]  [0:      swapper/0:    1] slram: not enough parameters.
+[    0.371971]  [2:      swapper/0:    1] libphy: Fixed MDIO Bus: probed
+[    0.372466]  [2:      swapper/0:    1] NXP PHY: loading NXP PHY driver: [autonomous mode]
+[    0.374469]  [2:      swapper/0:    1] imx8qxp-pinctrl iomuxc: pin SC_P_COMP_CTL_GPIO_1V8_3V3_ENET_ENETB0 already requested by 5b040000.ethernet; cannot claim for fixed-0:00
+[    0.374489]  [2:      swapper/0:    1] imx8qxp-pinctrl iomuxc: pin-43 (fixed-0:00) status -22
+[    0.374502]  [2:      swapper/0:    1] imx8qxp-pinctrl iomuxc: could not request pin 43 (SC_P_COMP_CTL_GPIO_1V8_3V3_ENET_ENETB0) from group fec1grp  on device iomuxc
+[    0.374513]  [2:      swapper/0:    1] TJA1102_p1 fixed-0:00: Error applying setting, reverse things back
+[    0.374538]  [2:      swapper/0:    1] TJA1102_p1: probe of fixed-0:00 failed with error -22
+[    0.374735]  [2:      swapper/0:    1] fec 5b040000.ethernet: 5b040000.ethernet supply phy not found, using dummy regulator
+[    0.376012]  [2:      swapper/0:    1] libphy: fec_enet_mii_bus: probed
+[    0.376119]  [0:      swapper/0:    1] mdio_bus 5b040000.ethernet-1: MDIO device at address 0 is missing.
+[    0.378026]  [0:      swapper/0:    1] imx_sc_rtc rtc: rtc core: registered rtc as rtc0
+[    0.378211]  [0:      swapper/0:    1] i2c /dev entries driver
+[    0.379320]  [0:      swapper/0:    1] max9288_init is ok
+[    0.382324]  [0:      swapper/0:    1] device-mapper: ioctl: 4.37.0-ioctl (2017-09-20) initialised: dm-devel@redhat.com
+[    0.383113]  [0:      swapper/0:    1] sdhci: Secure Digital Host Controller Interface driver
+[    0.383127]  [0:      swapper/0:    1] sdhci: Copyright(c) Pierre Ossman
+[    0.383134]  [0:      swapper/0:    1] sdhci-pltfm: SDHCI platform and OF driver helper
+[    0.429884]  [1:      swapper/0:    1] mmc0: SDHCI controller on 5b010000.usdhc [5b010000.usdhc] using ADMA
+[    0.460824]  [3:      swapper/0:    1] caam 31400000.caam: ERA source: device tree.
+[    0.468748]  [1:      swapper/0:    1] caam algorithms registered in /proc/crypto
+[    0.471347]  [0:      swapper/0:    1] caam_jr 31430000.jr2: registering rng-caam
+[    0.471684]  [0:      swapper/0:    1] caam 31400000.caam: caam pkc algorithms registered in /proc/crypto
+[    0.473254]  [0:      swapper/0:    1] ashmem: initialized
+[    0.473523]  [0:      swapper/0:    1] logger: created 256K log 'log_main'
+[    0.473664]  [0:      swapper/0:    1] logger: created 256K log 'log_events'
+[    0.473800]  [0:      swapper/0:    1] logger: created 256K log 'log_radio'
+[    0.474015]  [0:      swapper/0:    1] logger: created 256K log 'log_system'
+[    0.476573]  [0:      swapper/0:    1] optee: probing for conduit method from DT.
+[    0.476884]  [0:      swapper/0:    1] optee: initialized driver
+[    0.500248]  [0:      swapper/0:    1] imx-saf7741 imx_machine: failed to find ESAI platform device
+[    0.500281]  [0:      swapper/0:    1] imx-saf7741: probe of imx_machine failed with error -22
+[    0.500585]  [0:      swapper/0:    1] Netfilter messages via NETLINK v0.30.
+[    0.500767]  [0:      swapper/0:    1] nf_conntrack version 0.5.0 (3072 buckets, 12288 max)
+[    0.501442]  [0:      swapper/0:    1] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    0.502220]  [2:      swapper/0:    1] arp_tables: arp_tables: (C) 2002 David S. Miller
+[    0.502727]  [2:      swapper/0:    1] NET: Registered protocol family 10
+[    0.503536]  [2:      swapper/0:    1] Segment Routing with IPv6
+[    0.503612]  [2:      swapper/0:    1] mip6: Mobile IPv6
+[    0.503636]  [2:      swapper/0:    1] ip6_tables: (C) 2000-2006 Netfilter Core Team
+[    0.503977]  [2:      swapper/0:    1] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[    0.504908]  [2:      swapper/0:    1] NET: Registered protocol family 17
+[    0.504933]  [2:      swapper/0:    1] NET: Registered protocol family 15
+[    0.504969]  [2:      swapper/0:    1] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    0.504979]  [2:      swapper/0:    1] 8021q: 802.1Q VLAN Support v1.8
+[    0.505735]  [2:      swapper/0:    1] registered taskstats version 1
+[    0.508700]  [1:    kworker/1:1:   53] mmc0: new HS400 MMC card at address 0001
+[    0.509645]  [1:    kworker/1:1:   53] mmcblk0: mmc0:0001 S0J35A 7.28 GiB 
+[    0.510261]  [1:    kworker/1:1:   53] mmcblk0boot0: mmc0:0001 S0J35A partition 1 31.5 MiB
+[    0.510825]  [1:    kworker/1:1:   53] mmcblk0boot1: mmc0:0001 S0J35A partition 2 31.5 MiB
+[    0.511392]  [1:    kworker/1:1:   53] mmcblk0rpmb: mmc0:0001 S0J35A partition 3 4.00 MiB
+[    0.516866]  [1:    kworker/1:1:   53]  mmcblk0: p1 p2 p3 p4
+[    0.525133]  [2:      swapper/0:    1] imx8_cpufreq_init: cluster 0 running at freq 1200 MHz, suspend freq 1200 MHz
+[    0.532782]  [2:      swapper/0:    1] imx_sc_rtc rtc: setting system clock to 1970-01-01 00:52:30 UTC (3150)
+[    0.535763]  [2:      swapper/0:    1] ALSA device list:
+[    0.535778]  [2:      swapper/0:    1]   No soundcards found.
+[    0.538085]  [2:      swapper/0:    1] Freeing unused kernel memory: 448K
+[    0.544938]  [2:           init:    1] SELinux: 1024 avtab hash slots, 2510 rules.
+[    0.546522]  [2:           init:    1] SELinux: 1024 avtab hash slots, 2510 rules.
+[    0.546533]  [2:           init:    1] SELinux:  1 users, 2 roles, 315 types, 0 bools, 1 sens, 1024 cats
+[    0.546541]  [2:           init:    1] SELinux:  97 classes, 2510 rules
+[    0.548071]  [2:           init:    1] SELinux:  policy capability network_peer_controls=1
+[    0.548086]  [2:           init:    1] SELinux:  policy capability open_perms=1
+[    0.548095]  [2:           init:    1] SELinux:  policy capability extended_socket_class=0
+[    0.548102]  [2:           init:    1] SELinux:  policy capability always_check_network=0
+[    0.548110]  [2:           init:    1] SELinux:  policy capability cgroup_seclabel=0
+[    0.548117]  [2:           init:    1] SELinux:  policy capability nnp_nosuid_transition=0
+[    0.548125]  [2:           init:    1] SELinux:  Completing initialization.
+[    0.548127]  [2:           init:    1] SELinux:  Setting up existing superblocks.
+[    0.602793]  [3:        kauditd:  564] audit: type=1403 audit(3150.568:2): policy loaded auid=4294967295 ses=4294967295
+[    0.603201]  [3:        kauditd:  564] audit: type=1404 audit(3150.568:3): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295
+[    0.623908]  [2:           init:    1] init: SELinux: Could not get canonical path for /dev/__properties__ restorecon: No such file or directory.
+[    0.697590]  [2:           init:    1] (EE) init: /init.rc: 357: invalid command 'restorecon_recursive'
+[    0.697771]  [2:           init:    1] (EE) init: /init.rc: 397: invalid option 'writepid'
+[    0.697948]  [2:           init:    1] (EE) init: /init.rc: 425: invalid option 'writepid'
+[    0.820080]  [0:           init:    1] (EE) init: cannot open '/initlogo.rle'
+[    0.820353]  [0:           init:    1] (II) init: command 'loglevel' r=0
+[    0.820383]  [0:           init:    1] (II) init: command 'export' r=0
+[    0.820411]  [0:           init:    1] (II) init: command 'export' r=0
+[    0.820434]  [0:           init:    1] (II) init: command 'export' r=0
+[    0.820457]  [0:           init:    1] (II) init: command 'export' r=0
+[    0.820481]  [0:           init:    1] (II) init: command 'export' r=0
+[    0.832797]  [3:           init: 1457] EXT4-fs (mmcblk0p1): mounted filesystem with ordered data mode. Opts: barrier=1
+[    0.832997]  [3:           init: 1457] fs_mgr: __mount(source=/dev/block/mmcblk0p1,target=/system,type=ext4, mountflags:1)=0
+[    0.833810]  [2:           init: 1457] fs_mgr: read_ext4_superblock:: superblock s_max_mnt_count:65535 of device(/dev/block/mmcblk0p2)
+[    0.842686]  [2:           init: 1457] EXT4-fs (mmcblk0p2): recovery complete
+[    0.843627]  [2:           init: 1457] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[    0.843723]  [2:           init: 1457] fs_mgr: __mount(source=/dev/block/mmcblk0p2,target=/data,type=ext4, mountflags:0)=0
+[    0.843748]  [2:           init: 1457] fs_mgr: /data is file encrypted
+[    0.844229]  [0:           init:    1] ext4_utils: Keyring created with id 260212449 in process 1
+[    0.859666]  [1:        kauditd:  564] audit: type=1400 audit(3150.824:4): avc:  denied  { read } for  pid=1475 comm="sshd" path=2F6465762F5F5F70726F706572746965735F5F202864656C6574656429 dev="tmpfs" 0
+[    0.870349] I[0:      swapper/0:    0] random: fast init done
+[    0.950263]  [0:           init:    1] vold: vold start
+[    1.001095]  [2:           init:    1] ext4_utils: e4crypt_create_device_key:: enablefilecrypto result:0 
+[    1.015965]  [2:           init:    1] ext4_utils: Setting 6ee5ffe2 policy on /data/tee failed!
+[    1.016176]  [2:           init:    1] ext4_utils: Not setting policy on /data/data
+[    1.016284]  [2:           init:    1] ext4_utils: Not setting policy on /data/user
+[    1.135821]  [1:           init:    1] usbcore: registered new interface driver usbfs
+[    1.135990]  [1:           init:    1] usbcore: registered new interface driver hub
+[    1.136233]  [1:           init:    1] usbcore: registered new device driver usb
+[    1.142690]  [1:           init:    1] mxs_phy 5b100000.usbphy: 5b100000.usbphy supply phy-3p0 not found, using dummy regulator
+[    1.175293]  [2:           init:    1] usbcore: registered new interface driver usb-storage
+[    1.192390]  [2:           init:    1] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.231677]  [1:           init:    1] usbmisc_imx 5b0d0200.usbmisc: 5b0d0200.usbmisc supply vbus-wakeup not found, using dummy regulator
+[    1.239392]  [1:           init:    1] imx_usb 5b0d0000.usb: 5b0d0000.usb supply vbus not found, using dummy regulator
+[    1.264542]  [1:           init:    1] usbcore: registered new interface driver cdc_ether
+[    1.268787]  [3:           init:    1] usbcore: registered new interface driver rndis_host
+[    1.278529]  [2:           init:    1] android_usb gadget: android_usb ready
+[    1.279858]  [2:           init:    1] android_usb: already disabled
+[    1.280220]  [2:           init:    1] android_usb: Cannot enable 'accessory'
+[    1.280282]  [2:           init:    1] adb_bind_config
+[    1.297809]  [0:       usb open: 1664] adb_open
+[    1.549959]  [0:    kworker/0:1:   45] android_work: sent uevent USB_STATE=CONNECTED
+[    1.700786] I[0:      swapper/0:    0] android_usb gadget: high-speed config #1: android
+[    1.700924]  [0:    kworker/0:1:   45] android_work: sent uevent USB_STATE=CONFIGURED
+[    3.017484]  [2:  Binder:1530_2: 1980] Generic PHY fixed-0:00: attached PHY driver [Generic PHY] (mii_bus:phy_addr=fixed-0:00, irq=POLL)
+[    3.019000]  [2:  Binder:1530_2: 1980] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+[    3.484611]  [3:  Binder:1530_2: 1980] IPv6: ADDRCONF(NETDEV_UP): vlan2: link is not ready
+[    3.486983]  [3:  Binder:1530_2: 1980] br0: port 1(vlan2) entered blocking state
+[    3.486998]  [3:  Binder:1530_2: 1980] br0: port 1(vlan2) entered disabled state
+[    3.487206]  [3:  Binder:1530_2: 1980] device vlan2 entered promiscuous mode
+[    3.487217]  [3:  Binder:1530_2: 1980] device eth0 entered promiscuous mode
+[    3.518023]  [3:  Binder:1530_2: 1980] IPv6: ADDRCONF(NETDEV_UP): vlan3: link is not ready
+[    3.520476]  [3:  Binder:1530_2: 1980] br0: port 2(vlan3) entered blocking state
+[    3.520496]  [3:  Binder:1530_2: 1980] br0: port 2(vlan3) entered disabled state
+[    3.520743]  [3:  Binder:1530_2: 1980] device vlan3 entered promiscuous mode
+[    3.551124]  [3:  Binder:1530_2: 1980] IPv6: ADDRCONF(NETDEV_UP): vlan4: link is not ready
+[    3.553549]  [3:  Binder:1530_2: 1980] br0: port 3(vlan4) entered blocking state
+[    3.553566]  [3:  Binder:1530_2: 1980] br0: port 3(vlan4) entered disabled state
+[    3.553803]  [3:  Binder:1530_2: 1980] device vlan4 entered promiscuous mode
+[    3.584160]  [3:  Binder:1530_2: 1980] IPv6: ADDRCONF(NETDEV_UP): vlan5: link is not ready
+[    3.586587]  [3:  Binder:1530_2: 1980] br0: port 4(vlan5) entered blocking state
+[    3.586603]  [3:  Binder:1530_2: 1980] br0: port 4(vlan5) entered disabled state
+[    3.586840]  [3:  Binder:1530_2: 1980] device vlan5 entered promiscuous mode
+[    3.617477]  [3:  Binder:1530_2: 1980] IPv6: ADDRCONF(NETDEV_UP): vlan51: link is not ready
+[    3.647760]  [3:  Binder:1530_2: 1980] IPv6: ADDRCONF(NETDEV_UP): vlan6: link is not ready
+[    3.650183]  [3:  Binder:1530_2: 1980] br0: port 5(vlan6) entered blocking state
+[    3.650199]  [3:  Binder:1530_2: 1980] br0: port 5(vlan6) entered disabled state
+[    3.650434]  [3:  Binder:1530_2: 1980] device vlan6 entered promiscuous mode
+[    4.030520]  [3:   kworker/u8:2:   33] fec 5b040000.ethernet eth0: Link is Up - 1Gbps/Full - flow control off
+[    4.031438]  [3:    kworker/3:2: 2060] IPv6: ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+[    4.031734]  [3:    kworker/3:2: 2060] IPv6: ADDRCONF(NETDEV_CHANGE): vlan2: link becomes ready
+[    4.031826] I[3:    kworker/3:2: 2060] br0: port 1(vlan2) entered blocking state
+[    4.031838] I[3:    kworker/3:2: 2060] br0: port 1(vlan2) entered forwarding state
+[    4.032007]  [3:    kworker/3:2: 2060] IPv6: ADDRCONF(NETDEV_CHANGE): vlan3: link becomes ready
+[    4.032091] I[3:    kworker/3:2: 2060] br0: port 2(vlan3) entered blocking state
+[    4.032102] I[3:    kworker/3:2: 2060] br0: port 2(vlan3) entered forwarding state
+[    4.032267]  [3:    kworker/3:2: 2060] IPv6: ADDRCONF(NETDEV_CHANGE): vlan4: link becomes ready
+[    4.032346] I[3:    kworker/3:2: 2060] br0: port 3(vlan4) entered blocking state
+[    4.032356] I[3:    kworker/3:2: 2060] br0: port 3(vlan4) entered forwarding state
+[    4.032519]  [3:    kworker/3:2: 2060] IPv6: ADDRCONF(NETDEV_CHANGE): vlan5: link becomes ready
+[    4.032584] I[3:    kworker/3:2: 2060] br0: port 4(vlan5) entered blocking state
+[    4.032594] I[3:    kworker/3:2: 2060] br0: port 4(vlan5) entered forwarding state
+[    4.032755]  [3:    kworker/3:2: 2060] IPv6: ADDRCONF(NETDEV_CHANGE): vlan6: link becomes ready
+[    4.032817] I[3:    kworker/3:2: 2060] br0: port 5(vlan6) entered blocking state
+[    4.032826] I[3:    kworker/3:2: 2060] br0: port 5(vlan6) entered forwarding state
+[    4.033002]  [3:    kworker/3:2: 2060] IPv6: ADDRCONF(NETDEV_CHANGE): vlan51: link becomes ready
+

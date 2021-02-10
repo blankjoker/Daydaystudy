@@ -1,0 +1,92 @@
+
+
+setenforce 0
+
+sh /system/usr/bin/oem-iptables-deinit.sh
+
+setenforce 0
+
+logcat -s diagd -v time &
+
+logcat -s doip -v time &
+
+logcat -s testdoip -v time &
+
+setenforce 0
+
+dmesg
+
+audit2allow -i
+
+logcat | grep -i SELinux
+
+
+
+cd　hardware/bsp/jbn8/x86_64/images
+
+make usbimage
+
+qemu-system-x86_64 -usb -usbdevice keyboard -hdb data.qcow2 -device e1000,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5559-:22 usb.img
+
+
+
+@nutshell:/ # iptables -S                                                      
+-P INPUT ACCEPT
+-P FORWARD ACCEPT
+-P OUTPUT ACCEPT
+-N bw_FORWARD
+-N bw_INPUT
+-N bw_OUTPUT
+-N bw_costly_shared
+-N bw_data_saver
+-N bw_happy_box
+-N bw_penalty_box
+-N fw_FORWARD
+-N fw_INPUT
+-N fw_OUTPUT
+-N fw_dozable
+-N fw_powersave
+-N fw_standby
+-N natctrl_FORWARD
+-N natctrl_tether_counters
+-N oem_fwd
+-N oem_out
+-N st_OUTPUT
+-A INPUT -j bw_INPUT
+-A INPUT -j fw_INPUT
+-A FORWARD -j oem_fwd
+-A FORWARD -j fw_FORWARD
+-A FORWARD -j bw_FORWARD
+-A FORWARD -j natctrl_FORWARD
+-A OUTPUT -j oem_out
+-A OUTPUT -j fw_OUTPUT
+-A OUTPUT -j st_OUTPUT
+-A OUTPUT -j bw_OUTPUT
+-A bw_INPUT -m owner --socket-exists
+-A bw_OUTPUT -m owner --socket-exists
+-A bw_costly_shared -j bw_penalty_box
+-A bw_data_saver -j RETURN
+-A bw_happy_box -m owner --uid-owner 0-9999 -j RETURN
+-A bw_happy_box -j bw_data_saver
+-A bw_penalty_box -j bw_happy_box
+-A fw_INPUT -i vlan51 -p udp -m udp --dport 13400 -j RETURN
+-A fw_INPUT -i vlan51 -p tcp -m tcp --dport 5555 -j RETURN
+-A fw_INPUT -i vlan51 -p tcp -m tcp --dport 22709 -j RETURN
+-A fw_INPUT -i vlan51 -p tcp -m tcp --dport 13400 -j RETURN
+-A fw_INPUT -i lo -j RETURN
+-A fw_INPUT -p icmp -j RETURN
+-A fw_INPUT -i br0 -m conntrack --ctstate RELATED,ESTABLISHED -j RETURN
+-A fw_OUTPUT -m owner --uid-owner 1114 -j RETURN
+-A fw_OUTPUT -m owner --uid-owner 0 -j RETURN
+-A fw_OUTPUT -j REJECT --reject-with icmp-port-unreachable
+-A fw_dozable -i lo -o lo -j RETURN
+-A fw_dozable -p tcp -m tcp --tcp-flags RST RST -j RETURN
+-A fw_dozable -m owner --uid-owner 0-9999 -j RETURN
+-A fw_dozable -j DROP
+-A fw_powersave -i lo -o lo -j RETURN
+-A fw_powersave -p tcp -m tcp --tcp-flags RST RST -j RETURN
+-A fw_powersave -m owner --uid-owner 0-9999 -j RETURN
+-A fw_powersave -j DROP
+-A fw_standby -i lo -o lo -j RETURN
+-A fw_standby -p tcp -m tcp --tcp-flags RST RST -j RETURN
+

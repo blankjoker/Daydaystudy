@@ -1,0 +1,3 @@
+/root/zhangkunliang_study/Cmake/CMakeFiles/rebuild_cache.dir
+/root/zhangkunliang_study/Cmake/CMakeFiles/testcmake.dir
+/root/zhangkunliang_study/Cmake/CMakeFiles/edit_cache.dir

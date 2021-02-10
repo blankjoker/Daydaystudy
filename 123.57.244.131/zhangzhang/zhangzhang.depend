@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1604051756 source:e:\codeblack\zhangzhang\src\three.cpp
+	"three.h"
+
+1604051756 e:\codeblack\zhangzhang\include\three.h
+
+1604051749 source:e:\codeblack\zhangzhang\src\two.cpp
+	"two.h"
+
+1604051749 e:\codeblack\zhangzhang\include\two.h
+
